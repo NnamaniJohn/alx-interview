@@ -1,8 +1,19 @@
+#!/usr/bin/python3
+"""
+lock boxes
+"""
+
+
 def canUnlockAll(boxes):
+    """
+    lock boxes
+    :param boxes:
+    :return boolean:
+    """
     opened = set()
     keys = [0]
 
-    while(keys):
+    while keys:
         key = keys.pop()
         if key in opened:
             continue
@@ -11,5 +22,6 @@ def canUnlockAll(boxes):
 
     if list(opened) == list(range(len(boxes))):
         return True
+
     return False
 
