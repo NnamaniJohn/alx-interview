@@ -10,6 +10,7 @@ def canUnlockAll(boxes):
     :param boxes:
     :return boolean:
     """
+    if not boxes: return True
     opened = set()
     keys = [0]
 
@@ -24,4 +25,3 @@ def canUnlockAll(boxes):
         return True
 
     return False
-
