@@ -10,16 +10,18 @@ def canUnlockAll(boxes):
     :param boxes:
     :return boolean:
     """
-    if not boxes: return True
+    if not boxes:
+        return True
+
     opened = set()
     keys = [0]
 
     while keys:
         key = keys.pop()
-        if key in opened:
+        if key in opened or key >= len(boxes):
             continue
-        opened.add(key)
         keys.extend(boxes[key])
+        opened.add(key)
 
     if list(opened) == list(range(len(boxes))):
         return True
